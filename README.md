@@ -1,24 +1,36 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| family_name        | string | null: false               |
+| first_name         | string | null: false               |
 
-Things you may want to cover:
+### Association
+- has_many :pantries
 
-* Ruby version
+## pantriesテーブル
 
-* System dependencies
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| name            | string     | null: false                    |
+| description     | text       |                                |
+| user            | references | null: false, foreign_key: true |
 
-* Configuration
+### Association
+- has_many :foods
+- belongs_to :user
 
-* Database creation
+## foodsテーブル
 
-* Database initialization
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| name         | string     | null: false                    |
+| purchase_day | date       | null: false                    |
+| limit_day    | date       |                                |
+| pantry       | references | null: false, foreign_key: true |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :pantry
