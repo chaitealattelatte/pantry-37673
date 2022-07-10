@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProtoSpace</title>
+    <title>Pantry</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,17 +15,18 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+            <%= link_to image_tag("milk.jpg", class: :logo), root_path %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
-            <%# <div class="nav__right"> %>
-              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
-              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
-            <%# </div> %>
+          <% if user_signed_in? %>
+            <div class="nav__right">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to "New Pantry", root_path, class: :nav__btn %>
+            </div>
+          <% end %>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
             <div class="nav__right">
-              <%= link_to "ログイン", root_path, class: :nav__btn %>
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", root_path, class: :nav__btn %>
             </div>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
@@ -34,7 +35,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">© 2022 A.milk</p>
     </footer>
   </body>
 </html>

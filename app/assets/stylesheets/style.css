@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #fbe3c9;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -52,16 +52,16 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 400px;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #049cfa;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #049cfa solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -74,7 +74,7 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #049cfa;
   text-decoration: none;
   user-select: none;
 }
