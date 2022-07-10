@@ -82,6 +82,23 @@ a {
   opacity: 0.5;
 }
 
+.edit_btn{
+  display: inline-block;
+  margin: 1em;
+  padding: 0.5em 1.6em;
+  font-size: 0.8em;
+  color: #049cfa;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #049cfa solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.edit_btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
