@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-  validates :nickname
-  validates :family_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
-  validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
+    validates :nickname
+    validates :family_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]/ }
   end
-  
+
   has_many :pantries, dependent: :destroy
 end

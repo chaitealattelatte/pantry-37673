@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #editアクションはビューファイルを表示するだけなので、アクションの定義のみになる
+    # editアクションはビューファイルを表示するだけなので、アクションの定義のみになる
   end
 
   def update
