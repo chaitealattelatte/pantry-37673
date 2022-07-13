@@ -1,4 +1,4 @@
-<%= form_with model:@food, url: pantry_foods_path, method: :post,local: true do |f|%>
+<%= form_with model: [@pantry,@foods], url: pantry_foods_path, method: :post, local: true do |f| %>
   <div class="field">
     <%= f.label :name, "Foodの名称（にんじん・トマト・牛乳・卵など）" %><br />
     <%= f.text_field :name, id:"prototype_title" %>

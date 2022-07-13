@@ -10,11 +10,13 @@ class FoodsController < ApplicationController
 
   def new
     @pantry = Pantry.find(params[:pantry_id])
-    @food = Food.new
+    @foods = Food.new
+    #ここではidはnilになる。
+    #idはモデル.newでは生成されず、モデル.createやモデル.saveでデータベースに保存した特に割り振られる。
   end
 
   def create
-    @pantry = Pantry.find(6)
+    @pantry = Pantry.find(params[:pantry_id])
     @foods = Food.new(food_params)
     if @foods.save
       redirect_to pantry_foods_path
@@ -35,7 +37,7 @@ class FoodsController < ApplicationController
 
 private
   def food_params
-    params.permit(:name, :purchase_day, :limit_day).merge(pantry_id: @pantry.id)
+    params.require(:food).permit(:name, :purchase_day, :limit_day).merge(pantry_id: @pantry.id)
   end
 
 end
