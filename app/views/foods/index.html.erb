@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">Food</h2>
+      <% @foods.each do |food| %> 
+      <%= food.name %><br>
+      <%="・購入日 #{food.purchase_day}" %><br>
+      <%="・期限日 #{food.limit_day}" %><br>
+      <% end %>
+        <%= render partial: 'form' %>
+    </div>
+  </div>
+</div>
