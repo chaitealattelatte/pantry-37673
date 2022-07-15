@@ -1,13 +1,46 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">Food</h2>
-      <% @foods.each do |food| %> 
-      <%= food.name %><br>
-      <%="・購入日 #{food.purchase_day}" %><br>
-      <%="・期限日 #{food.limit_day}" %><br>
-      <% end %>
-        <%= render partial: 'form' %>
+       <h2 class="page-heading" ><%= link_to "New Food", new_pantry_food_path, class: :nav__btn %></h2>
+
+         <div class="card__wrapper">
+           <% @foods.each do |food| %>
+             <div class ="card">
+               <div class="card__body"> 
+                 <span class="food_name"><%= food.name %></span>
+                 <%= link_to "Foodの削除", pantry_food_path(id: food.id), method: :delete,data: {confirm: 'Foodを削除しますか？'}, class: :nav__btn %>
+                 
+                 <ul>
+                   <li><%= "購入日 #{food.purchase_day}" %></li>
+                   <% passingdays = (Date.today) - (food.purchase_day) %>
+                   <li><%= "買ってから#{passingdays.numerator}日が経過しました" %></li>
+                   <% if food.limit_day.present? %>
+                   <li><%= "期限日 #{food.limit_day}" %></li>
+                   <% end %> 
+                 </ul>
+
+                 <% if food.limit_day.present? && (food.limit_day - Date.today < 0) %>
+                   <% limitdays = (food.limit_day) - (Date.today) %>
+                   <span class="limitday"><%= "#{limitdays.numerator.abs}日、期限を過ぎています" %></span><br>
+                 <% elsif food.limit_day.present? %>
+                   <% limitdays = (food.limit_day) - (Date.today) %>
+                   <span class="limitday"><%= "期限まで#{limitdays.numerator}日" %></span><br>
+                 <% elsif passingdays >= 3 %>
+                   <span class="limitday"><%= "期限を確認してください" %></span><br>
+                 <% end %>
+
+                 <% if food.limit_day.present? && (food.limit_day - Date.today > 14) %>
+                   <%= image_tag("baby.milk.png") %>
+                   <% elsif  (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0)%>
+                   <%= image_tag("milk.akubi.png") %>
+                   <% else %>
+                   <%= image_tag("milk.circle.png") %>
+                 <% end %>
+               </div>
+             </div>
+           <% end %>
+         </div>
+
     </div>
   </div>
 </div>
