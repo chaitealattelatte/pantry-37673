@@ -24,7 +24,7 @@ RSpec.describe Pantry, type: :model do
       it 'userが紐付いていないと登録できない' do
         @pantry.user = nil
         @pantry.valid?
-        expect(@pantry.errors.full_messages).to include("User must exist")
+        expect(@pantry.errors.full_messages).to include('User must exist')
       end
     end
   end

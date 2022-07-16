@@ -24,7 +24,7 @@ RSpec.describe Food, type: :model do
       it 'pantryが紐付いていないと登録できない' do
         @food.pantry = nil
         @food.valid?
-        expect(@food.errors.full_messages).to include("Pantry must exist")
+        expect(@food.errors.full_messages).to include('Pantry must exist')
       end
     end
   end
