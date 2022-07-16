@@ -1,8 +1,18 @@
-<h2>ニックネーム</h2> <%= @user.nickname %><br>
-<h2>メールアドレス</h2> <%= @user.email %><br>
-<h2>パスワード</h2> ****** <br>
-<h2>名字</h2> <%= @user.family_name%><br>
-<h2>名前</h2> <%= @user.first_name%><br>
+<div class = "edit_background">
+  <div class="field">ニックネーム</div> 
+  <div class="edit"><%= @user.nickname %></div>
 
-<%= link_to "編集", edit_user_path(current_user), class: :nav__btn %>
-<br><br>
+  <div class="field">メールアドレス</div>
+  <div class="edit"><%= @user.email %></div>
+
+  <div class="field">パスワード</div>
+  <div class="edit">**********</div>
+
+  <div class="field">名字</div>
+  <div class="edit"><%= @user.family_name%></div>
+
+  <div class="field">名前</div>
+  <div class="edit"><%= @user.first_name%></div>
+
+  <div class="actions"><%= link_to "編集", edit_user_path(current_user), class: :edit__btn %></div>
+</div>

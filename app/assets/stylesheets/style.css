@@ -38,7 +38,7 @@ a {
 
 .header {
   background-color: #fbe3c9;
-  margin-bottom: 48px;
+  margin-bottom: 20px;
   padding: 20px 0;
 
 }
@@ -46,14 +46,17 @@ a {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .logo {
   width: 400px;
 }
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -65,6 +68,7 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
@@ -82,7 +86,6 @@ a {
   opacity: 0.5;
 }
 
-
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
@@ -93,11 +96,37 @@ a {
 }
 
 .field{
-  margin: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.edit{
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  margin: 10px 0px;
+  font-size: 15px;
+  color: white;
 }
 
 .actions{
   margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.edit__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1em;
+  color: white;
+  border: 2px #049cfa solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+.edit__btn:hover{
+  color: #fff;
+  background: #87CEFA;
 }
 
 .form__btn{
@@ -161,11 +190,7 @@ a {
 
 .limitday{
   color: #049cfa;
-  border: 2px;
-  padding: 5px;
-  margin: 5px;
-  position: absolute;
-  background: linear-gradient(transparent 30%, #facc60 70%);
+  font-size: large;
 }
 
 .food_name{
@@ -176,37 +201,15 @@ a {
 .passing{
   color: red;
 }
-/* ユーザーページ */
-.user__wrapper{
-  min-height: calc(100vh - 161px);
+
+.edit_background{
+  background-image: url("sleeping.milk");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(100vw);
+  height: calc(100vh);
 }
-.table{
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  width: 50%;
-}
-.table__col1{
-  text-align: left;
-  font-weight: bold;
-  background: #fafafa;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
-  width: 30%;
-  padding: 8px;
-}
-.table__col2{
-  text-align: left;
-  border: 1px solid #f5f5f5;
-  border-collapse: collapse;
-  width: 70%;
-  padding: 16px 8px;
-}
-.user__card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+
 /* フッター */
 
 .footer {

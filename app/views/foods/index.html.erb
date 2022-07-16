@@ -15,23 +15,23 @@
                    <% passingdays = (Date.today) - (food.purchase_day) %>
                    <li><%= "買ってから" %><span class="passing"><%= "#{passingdays.numerator}日" %></span><%= "が経過しました" %></li>
                    <% if food.limit_day.present? %>
-                   <li><%= "期限日：" %><span class="passing"><%= food.limit_day %></span></li>
+                    <li><%= "期限日：" %><span class="passing"><%= food.limit_day %></span></li>
                    <% end %> 
+                 
+                   <% if food.limit_day.present? && (food.limit_day - Date.today < 0) %>
+                    <% limitdays = (food.limit_day) - (Date.today) %>
+                    <li class="limitday"><%= "#{limitdays.numerator.abs}日、期限を過ぎています" %></li>
+                   <% elsif food.limit_day.present? %>
+                    <% limitdays = (food.limit_day) - (Date.today) %>
+                    <li class="limitday"><%= "期限まで#{limitdays.numerator}日" %></li>
+                   <% elsif passingdays >= 3 %>
+                    <li class="limitday"><%= "期限を確認してください" %></li>
+                   <% end %>
                  </ul>
-
-                 <% if food.limit_day.present? && (food.limit_day - Date.today < 0) %>
-                   <% limitdays = (food.limit_day) - (Date.today) %>
-                   <span class="limitday"><%= "#{limitdays.numerator.abs}日、期限を過ぎています" %></span><br>
-                 <% elsif food.limit_day.present? %>
-                   <% limitdays = (food.limit_day) - (Date.today) %>
-                   <span class="limitday"><%= "期限まで#{limitdays.numerator}日" %></span><br>
-                 <% elsif passingdays >= 3 %>
-                   <span class="limitday"><%= "期限を確認してください" %></span><br>
-                 <% end %>
 
                  <% if food.limit_day.present? && (food.limit_day - Date.today > 14) %>
                    <%= image_tag("baby.milk.png") %>
-                   <% elsif  (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0)%>
+                   <% elsif  (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0) %>
                    <%= image_tag("milk.akubi.png") %>
                    <% else %>
                    <%= image_tag("milk.circle.png") %>
