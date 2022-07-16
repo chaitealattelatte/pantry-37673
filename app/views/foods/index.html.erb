@@ -11,11 +11,11 @@
                  <%= link_to "Foodの削除", pantry_food_path(id: food.id), method: :delete,data: {confirm: 'Foodを削除しますか？'}, class: :nav__btn %>
                  
                  <ul>
-                   <li><%= "購入日 #{food.purchase_day}" %></li>
+                   <li><%= "購入日： #{food.purchase_day}" %></li>
                    <% passingdays = (Date.today) - (food.purchase_day) %>
-                   <li><%= "買ってから#{passingdays.numerator}日が経過しました" %></li>
+                   <li><%= "買ってから" %><span class="passing"><%= "#{passingdays.numerator}日" %></span><%= "が経過しました" %></li>
                    <% if food.limit_day.present? %>
-                   <li><%= "期限日 #{food.limit_day}" %></li>
+                   <li><%= "期限日：" %><span class="passing"><%= food.limit_day %></span></li>
                    <% end %> 
                  </ul>
 

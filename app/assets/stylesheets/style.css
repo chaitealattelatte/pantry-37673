@@ -160,17 +160,12 @@ a {
 } 
 
 .limitday{
-  color: crimson;
-  border: 2px crimson solid;
-  padding: 0px;
-  margin: 30px 0px;
-  background-color:#fbe3c9;
+  color: #049cfa;
+  border: 2px;
+  padding: 5px;
+  margin: 5px;
   position: absolute;
-  z-index: 100;
-}
-
-.purchaseday{
-  color:chocolate;
+  background: linear-gradient(transparent 30%, #facc60 70%);
 }
 
 .food_name{
@@ -178,6 +173,9 @@ a {
   font-family:'Courier New', Courier, monospace;
 }
 
+.passing{
+  color: red;
+}
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
