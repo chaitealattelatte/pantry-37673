@@ -78,6 +78,9 @@ https://pantry-37673.herokuapp.com/
 ### Association
 - belongs_to :pantry
 
+# 開発環境
+Ruby
+
 # ローカルでの動作方法
 以下のコマンドを順に実行。
 
