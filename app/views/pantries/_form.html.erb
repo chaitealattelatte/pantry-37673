@@ -1,4 +1,5 @@
 <%= form_with model: @pantry, local: true do |f|%>
+<%= render 'shared/error_messages',model: @pantry %>
   <div class="field">
     <%= f.label :name, "Pantryの名称（野菜室・飲み物・調味料など）" %><br />
     <%= f.text_field :name, id:"prototype_title" %>

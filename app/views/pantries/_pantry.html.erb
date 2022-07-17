@@ -4,7 +4,7 @@
     <%= link_to image_tag("milk.door.png"), pantry_foods_path(pantry_id: pantry.id), class: :a_picture %>
     <%= pantry.description %>
     <%= link_to "by #{pantry.user.nickname} ", user_path(id: current_user.id), class: :card__user %>
-    <%= link_to "パントリーの削除", pantry_path(id: pantry.id), method: :delete, data: {confirm: 'Pantryを削除しますか？'}, class: :nav__btn%>
+    <%= link_to "Pantryの削除", pantry_path(id: pantry.id), method: :delete, data: {confirm: 'Pantryを削除しますか？'}, class: :nav__btn%>
     <%= link_to "編集", edit_pantry_path(id: pantry.id), class: :nav__btn %>
   </div>
 </div>

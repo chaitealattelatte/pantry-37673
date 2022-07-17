@@ -1,4 +1,5 @@
 <%= form_with model: [@pantries,@food], url: pantry_foods_path, method: :post, local: true do |f| %>
+  <%= render 'shared/error_messages',model: @food %>
   <div class="field">
     <%= f.label :name, 'Foodの名称（にんじん・トマト・牛乳・卵など）' %><br>
     <%= f.text_field :name, id:"prototype_title" %>
