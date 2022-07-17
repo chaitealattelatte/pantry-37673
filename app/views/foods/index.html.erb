@@ -29,7 +29,7 @@
                    <% end %>
                  </ul>
 
-                 <% if food.limit_day.present? && (food.limit_day - Date.today > 14) %>
+                 <% if food.limit_day.present? && (food.limit_day - Date.today >= 14) %>
                    <%= image_tag("baby.milk.png") %>
                    <% elsif  (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0) %>
                    <%= image_tag("milk.akubi.png") %>
