@@ -19,12 +19,12 @@ RSpec.describe Pantry, type: :model do
       it 'nameが空だと登録できない' do
         @pantry.name = ''
         @pantry.valid?
-        expect(@pantry.errors.full_messages).to include("Name can't be blank")
+        expect(@pantry.errors.full_messages).to include('Pantryの名称を入力してください')
       end
       it 'userが紐付いていないと登録できない' do
         @pantry.user = nil
         @pantry.valid?
-        expect(@pantry.errors.full_messages).to include('User must exist')
+        expect(@pantry.errors.full_messages).to include('Userを入力してください')
       end
     end
   end
