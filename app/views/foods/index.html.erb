@@ -2,6 +2,9 @@
   <div class="inner">
     <div class="form__wrapper">
        <h2 class="page-heading" ><%= link_to "New Food", new_pantry_food_path, class: :nav__btn %></h2>
+       <div class="baby">赤ちゃん猫：期限日まで14日以上</div>
+       <div class="yawn">あくび猫：期限日が不明で購入日から5日以上 or 期限切れ</div>
+       <div class="stare">左記以外は、猫と見つめ合えます</div>
 
          <div class="card__wrapper">
            <% @foods.each do |food| %>

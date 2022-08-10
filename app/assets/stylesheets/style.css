@@ -67,6 +67,7 @@ a {
   border: 1px #049cfa solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  margin-top: 15px;
 }
 
 .nav__btn:hover{
@@ -149,6 +150,9 @@ a {
 }
 
 /* メイン */
+.main {
+  background-image: url("vegetable");
+} 
 
 .greeting{
   margin-bottom: 20px;
@@ -208,6 +212,45 @@ a {
   background-size: cover;
   width: calc(100vw);
   height: calc(100vh);
+}
+
+.baby{
+  font-size: 15px;
+  display: inline;
+  padding: 0.2em;
+  margin: 10px;
+  color: black;
+  border: #ffffff dashed 1px;
+  box-shadow: 0 0 0 0.2em #acedf7;
+  border-radius: 2.5px;
+  background-color: #acedf7;
+  cursor: pointer;
+}
+
+.yawn{
+  font-size: 15px;
+  display: inline;
+  padding: 0.2em;
+  margin: 10px;
+  color: black;
+  border: orange dashed 1px;
+  box-shadow: 0 0 0 0.2em rgb(252, 252, 164);
+  border-radius: 2.5px;
+  background-color: rgb(252, 252, 164);
+  cursor: pointer;
+}
+
+.stare{
+  font-size: 15px;
+  display: inline;
+  padding: 0.2em;
+  margin: 10px;
+  color: black;
+  border: #ffffff dashed 1px;
+  box-shadow: 0 0 0 0.2em hsl(330, 88%, 81%);
+  border-radius: 2.5px;
+  background-color: hsl(330, 88%, 81%);
+  cursor: pointer;
 }
 
 /* フッター */
