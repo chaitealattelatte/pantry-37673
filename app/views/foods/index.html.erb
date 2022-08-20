@@ -4,7 +4,7 @@
        <h2 class="page-heading" ><%= link_to "New Food", new_pantry_food_path, class: :nav__btn %></h2>
        <div class="baby">赤ちゃん猫：期限日まで14日以上</div>
        <div class="yawn">あくび猫：期限日が不明で購入日から5日以上 or 期限切れ</div>
-       <div class="stare">左記以外は、猫と見つめ合えます</div>
+       <div class="stare">左以外は、猫と見つめ合えます</div>
 
          <div class="card__wrapper">
            <% @foods.each do |food| %>
@@ -34,7 +34,7 @@
 
                  <% if food.limit_day.present? && (food.limit_day - Date.today >= 14) %>
                    <%= image_tag("baby.milk.png") %>
-                   <% elsif  (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0) %>
+                   <% elsif  food.limit_day.blank? && (Date.today - food.purchase_day >= 5) || food.limit_day.present? && (food.limit_day - Date.today < 0) %>
                    <%= image_tag("milk.akubi.png") %>
                    <% else %>
                    <%= image_tag("milk.circle.png") %>
